@@ -1,0 +1,7 @@
+{
+    "src/vendors/knockoutjs/dist/knockout.debug.js": "6b213ffdc22b596f77e6cb9597ba0a87d803462d398dca25bd44807b5f911705",
+    "src/vendors/knockout-secure-binding/dist/knockout-secure-binding.js": "cc92bd46ca5a3084bab63e9a88520e88b9bc40998ef39c98ba185afed44e9096",
+    "src/vendors/knockout-secure-binding/dist/knockout-secure-binding.min.js": "3c2947a6074e32ba948f1fa4b979ecaed6cbb41d045ea21e2f895805593748f9",
+    "src/vendors/knockout-bootstrap/build/knockout-bootstrap.min.js": "3d253ef8aec822390231333008ce43cecb08d885446dac6edb4cc666990686d5",
+    "src/vendors/knockout-validation/Dist/knockout.validation.min.js": "46347e6ebb9d8d909b0840713118ca0f2cdcd9526767025b9fa7d5483a4af94e"
+}
