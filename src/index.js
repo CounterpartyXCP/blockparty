@@ -1,14 +1,19 @@
 requirejs.config({
-  shim: {},
+  shim: {bootstrap:{"deps":['jquery']}},
+
   paths: {
+    util: 'js/util',
+    conf: 'js/conf',
     status: 'vm/status',
     jquery: 'vendors/jquery/dist/jquery',
     knockout: 'vendors/knockoutjs/dist/knockout',
-    pager: 'vendors/pagerjs/pager'
-  }
+    pager: 'vendors/pagerjs/pager',
+    bootstrap: "vendors/bootstrap/dist/js/bootstrap"
+  },
+  urlArgs: "bust=" + (new Date()).getTime() //Cache bust!
 });
 
-requirejs(['jquery', 'knockout', 'pager'], function ($, ko, pager) {
+requirejs(['jquery', 'knockout', 'pager','bootstrap'], function ($, ko, pager) {
 
   var viewModel = {id: "test"};
 
