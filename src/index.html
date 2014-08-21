@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en-us" style="background-color:#FFF">
 <head>
-
+  <title>Blockparty</title>
+  <script data-main="index.js" type="text/javascript" src="vendors/requirejs/require.js"></script>
 </head>
 <body>
+
+<div class="container">
+<div data-bind="page: {id: 'start'}">
+  This is the start page.
+  <span data-bind="text: id"></span>
+  <a data-bind="page-href: '/status'">Status page</a>
+</div>
+
+<div data-bind="page: {id: 'status', source: 'pages/status.html', withOnShow: requireVM(status)"></div>
+</div>
+
+
 <!-- build:js js/blockparty-deps-min.js -->
 <!-- knockout.js -->
-<script src="vendors/knockoutjs/dist/knockout.debug.js"></script>
-<script src='vendors/knockout-secure-binding/dist/knockout-secure-binding.js'></script>
-<!--<script src='vendors/knockout-secure-binding/dist/knockout-secure-binding.min.js'></script>-->
-<script src="vendors/knockout-bootstrap/build/knockout-bootstrap.min.js"></script>
-<script src="vendors/knockout-validation/Dist/knockout.validation.min.js"></script>
 <!-- endbuild -->
+
+
 </body>
 </html>
