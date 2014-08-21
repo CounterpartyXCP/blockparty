@@ -5,6 +5,7 @@ requirejs.config({
     util: 'js/util',
     conf: 'js/conf',
     status: 'vm/status',
+    test: 'vm/test',
     jquery: 'vendors/jquery/dist/jquery',
     knockout: 'vendors/knockoutjs/dist/knockout',
     pager: 'vendors/pagerjs/pager',
@@ -13,9 +14,11 @@ requirejs.config({
   urlArgs: "bust=" + (new Date()).getTime() //Cache bust!
 });
 
-requirejs(['jquery', 'knockout', 'pager','bootstrap'], function ($, ko, pager) {
+requirejs(['jquery', 'knockout', 'pager'], function ($, ko, pager) {
 
-  var viewModel = {id: "test"};
+  var viewModel = {
+
+  };
 
   window.requireVM = function (moduleName) {
     return function (callback) {
@@ -25,20 +28,20 @@ requirejs(['jquery', 'knockout', 'pager','bootstrap'], function ($, ko, pager) {
     };
   };
 
-  window.requireJson = function(url) {
+  window.requireJson = function (url) {
 
   };
 
+  // withOnShow: requireVM('product')
 
   $(function () {
-    pager.onBindingError.add(function(event) {
-      console.log(event);
-    });
     pager.Href.hash = '#!/';
 
     pager.extendWithPage(viewModel);
 
     ko.applyBindings(viewModel);
     pager.start();
+
   });
 });
+
