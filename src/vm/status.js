@@ -7,9 +7,7 @@ define('status',['jquery','knockout','util'], function($,ko, util){
       console.log(data);
       for (var key in data){
         stat_arr.push({'key':key,'value':data[key]});
-        console.log({'key':key,'value':data[key]});
       }
-      console.log(stat_arr);
     });
     return {
       status: status,
