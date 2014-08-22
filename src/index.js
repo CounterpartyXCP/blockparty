@@ -1,11 +1,18 @@
 requirejs.config({
-  shim: {bootstrap:{"deps":['jquery']}},
+  shim: {
+    bootstrap:{"deps":['jquery']},
+    conf: {},
+    chai: {},
+    api: {"deps":['jquery','conf','chai']}
+
+  },
 
   paths: {
-    util: 'js/util',
-    conf: 'js/conf',
+    api: 'https://cdn.rawgit.com/CounterpartyXCP/counterwebdeps/master/js/util.api',
     status: 'vm/status',
     test: 'vm/test',
+    conf: 'js/conf',
+    chai: 'vendors/chai/chai',
     jquery: 'vendors/jquery/dist/jquery',
     knockout: 'vendors/knockoutjs/dist/knockout',
     pager: 'vendors/pagerjs/pager',

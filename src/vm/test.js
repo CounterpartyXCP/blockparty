@@ -1,4 +1,4 @@
-define('test',['jquery','knockout','util'], function($,ko, util){
+define('test',['jquery','knockout','api'], function($,ko, api){
   console.log("in test vm");
   return {
     foo: ko.observable('bar')
