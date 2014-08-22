@@ -1,32 +1,25 @@
-define(['conf'], function (conf) {
+define(['conf','underscore','knockout'], function (conf,_, ko) {
       console.log(conf);
       console.log('loading util');
+
+      var onError = function(jqXHR, textStatus, errorThrown, endpoint){
+        console.log("Error: "+textStatus+" / "+errorThrown+" / "+endpoint);
+      }
       return {
-        rpc: function (method, params, result, callback) {
-          params = typeof params !== 'undefined' ? params : [];
-          var real_params = {
-            method: method,
-            params: params
-          };
-          var request = {};
-          request.method = "proxy_to_counterpartyd";;
-          request.params = real_params;
-          request.id = 1;
-          request.jsonrpc = "2.0";
+        load_msgs: function(n) {
+          var msgs = ko.observableArray([]);
 
-          $.ajax({
-            type: "POST",
-            url: conf.API_SERVER + "/_api",
-            data: JSON.stringify(request),
-            success: function (data, status, jqx) {
-              result = data.result;
-              if (typeof callback !== 'undefined'){
-                callback(result);
-              }
-            },
-            dataType: "json"
+          failoverAPI('get_last_n_messages',{'count':n}, function(data){
+                  _.forEach(data, function(x){
 
-          });
+                    msgs.push(x);
+                  });
+                }
+            );
+
+
+          return msgs;
+
         }
       }
     }

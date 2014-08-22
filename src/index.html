@@ -25,6 +25,7 @@
         <li><a data-bind="page-href: '/start'">Home</a></li>
         <li><a data-bind="page-href: '/status'">Status</a></li>
         <li><a data-bind="page-href: '/test'">Test</a> </li>
+        <li><a data-bind="page-href: '/tx'">TXNs</a> </li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
@@ -38,7 +39,7 @@
 
 <div data-bind="page: {id: 'status', sourceOnShow: 'pages/status.html', withOnShow: requireVM('status')}"></div>
 <div data-bind="page: {id: 'test', sourceOnShow: 'pages/test.html', withOnShow: requireVM('test')}"></div>
-
+  <div data-bind="page: {id: 'tx', sourceOnShow: 'pages/tx.html', withOnShow: requireVM('tx')}"></div>
 </div>
 
 
