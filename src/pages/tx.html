@@ -1,3 +1,26 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Source</th>
+      <th>Source Amount</th>
+      <th>Destination</th>
+      <th>Destination Amount</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+<tbody data-bind="foreach: tx_data">
+  <tr>
+    <td data-bind="text: desc"></td>
+    <td data-bind="text: src"></td>
+    <td data-bind="text: amount"></td>
+    <td data-bind="text: dest"></td>
+    <td data-bind="text: amount2"></td>
+    <td data-bind="text: nice_status"></td>
+  </tr>
+</tbody>
+</table>
+
 <ul data-bind="foreach: tx_json">
   <li data-bind="text: $data"></li>
 </ul>

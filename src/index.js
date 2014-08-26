@@ -14,12 +14,15 @@ requirejs.config({
     tx: 'vm/tx',
     conf: 'js/conf',
     util: 'js/util',
+    consts: 'js/consts',
+    asset: 'js/asset',
     jquery: 'vendors/jquery/dist/jquery',
     knockout: 'vendors/knockoutjs/dist/knockout',
     pager: 'vendors/pagerjs/pager',
     underscore: 'vendors/underscore/underscore',
     bootstrap: "vendors/bootstrap/dist/js/bootstrap",
-    bootbox: "vendors/bootbox/bootbox"
+    bootbox: "vendors/bootbox/bootbox",
+    decimal: "js/decimal"
   },
   urlArgs: "bust=" + (new Date()).getTime() //Cache bust!
 });
