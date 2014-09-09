@@ -12,6 +12,7 @@ requirejs.config({
     status: 'vm/status',
     test: 'vm/test',
     tx: 'vm/tx',
+    txns: 'vm/txns',
     conf: 'js/conf',
     util: 'js/util',
     consts: 'js/consts',
@@ -27,14 +28,14 @@ requirejs.config({
   urlArgs: "bust=" + (new Date()).getTime() //Cache bust!
 });
 
-requirejs(['jquery', 'knockout', 'pager','bootstrap', 'bootbox'], function ($, ko, pager, bootstrap, bootbox) {
+requirejs(['jquery', 'knockout', 'pager','bootstrap', 'bootbox', 'tx'], function ($, ko, pager, bootstrap, bootbox, tx) {
 
   var viewModel = {
 
   };
 
   window.requireVM = function (moduleName) {
-    return function (callback) {
+    return function (callback, page) {
       require([moduleName], function (mod) {
         callback(mod);
       });
